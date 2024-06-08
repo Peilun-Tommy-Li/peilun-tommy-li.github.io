@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Font Styles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Times New Roman for English text */
+        .navbar-nav li a, .navbar-brand {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Apply Kaishu for Chinese text */
+        .navbar-nav li a:lang(zh), .navbar-brand:lang(zh) {
+            font-family: 'KaiTi', 'Noto Serif', serif;
+        }
+
+        /* Increase the font size of the navbar-brand (your name) */
+        .navbar-brand {
+            font-size: 1.5em; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu
+                </button>
+                <a class="navbar-brand white" href="index.html">Peilun(Tommy)Li 李佩伦</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="home" class="active"><a href="index.html">Home</a></li>
+                    <li id="teaching"><a href="teaching.html">Teaching</a></li>
+                    <li id="research"><a href="research.html">Research</a></li>
+                    <li id="CV"><a href="vitae.html">CV</a></li>
+                    <li id="projects"><a href="projects.html">Projects</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
