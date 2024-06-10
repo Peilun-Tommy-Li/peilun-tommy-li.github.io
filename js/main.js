@@ -53,20 +53,20 @@ $(document).ready(function() {
      $('[data-toggle="popover"]').popover();
 
      // open all accordion panels for possible rinting
-     // $(".expander").on("click", function() {
-     //
-     //    // Change the button
-     //    if ($(".expander").text() == "show all") {
-     //       $(".expander").text("hide all");
-     //       $(".panel-collapse").addClass("in");
-     //       $(".panel-default a").attr("aria-expanded", "true").removeClass("collapsed");
-     //    } else {
-     //       $(".expander").text("show all");
-     //       $(".panel-collapse").removeClass("in");
-     //       $(".panel-default a").attr("aria-expanded", "false").addClass("collapsed");
-     //    }
-     //
-     // });
+//      $(".expander").on("click", function() {
+//
+//         // Change the button
+//         if ($(".expander").text() == "show all") {
+//            $(".expander").text("hide all");
+//            $(".panel-collapse").addClass("in");
+//            $(".panel-default a").attr("aria-expanded", "true").removeClass("collapsed");
+//         } else {
+//            $(".expander").text("show all");
+//            $(".panel-collapse").removeClass("in");
+//            $(".panel-default a").attr("aria-expanded", "false").addClass("collapsed");
+//         }
+//
+//      });
 
      // open all accordion panels for possible printing or close
    $(".expander").on("click", function() {

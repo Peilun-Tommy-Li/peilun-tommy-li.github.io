@@ -43,3 +43,13 @@ color: black;
 .panel-group .panel-heading+.panel-collapse>.panel-body {
 border-top: 0px;
 }
+
+.panel-heading,
+.panel-body {
+    min-height: 50px; /* Adjust the minimum height as needed */
+    overflow: hidden;
+}
+
+
+
+

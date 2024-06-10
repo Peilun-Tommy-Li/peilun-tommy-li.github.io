@@ -59,6 +59,16 @@
 <!-- Main content    -->
 <div id="main-container" class="container">
 
+    <div class="alert alert-success" role="alert">
+        <p>
+            <i class="fa fa-star fa-fw" aria-hidden="true"></i>
+            <a class="close" data-dismiss="alert" aria-label="close">×</a>
+            <strong>I am applying PhD programs for Fall 2025 entry in Computer Science, Computational Math, Electrical
+                Engineering, and relevant fields.</strong>
+            <br>
+            Please feel free to contact me through email if you are interested in my profile!</a>
+        </p>
+    </div>
 
     <div class="row">
         <div class="col-sm-4">
@@ -69,7 +79,7 @@
 
             </p>
             <p
-                            style="color: gray; text-align: center;"> 佩，心地纯净 &nbsp;&nbsp; 伦，行之有道</p>
+                    style="color: gray; text-align: center;"> 佩，心地纯净 &nbsp;&nbsp; 伦，行之有道</p>
 
             <table class="table" id="contact-table">
                 <tbody>
@@ -101,10 +111,12 @@
                 <a href="https://my.vanderbilt.edu/glennwebb/" target="_blank">Glenn Webb</a>.
             </p>
 
-            <p>My current research interests lie in the intersection of applied mathematics, control,
-                and machine learning. In particular, I am excited to explore safe learning-based modeling and control of
-                physical systems. My work revolves around developing theory and applications of data-driven approaches
-                on ODE and PDE systems for generalizability, reliability and interpretability.
+            <p>My current research interests lie at the intersection of applied mathematics, control theory, and machine
+                learning. I am particularly focused on advancing safe learning-based modeling and control of physical
+                systems. My work involves the development of both theoretical frameworks and practical applications of
+                data-driven methodologies for ordinary differential equations (ODE) and partial differential equations
+                (PDE) systems. The primary objectives of my research are to enhance the generalizability, reliability,
+                and interpretability of these approaches.
             </p>
 
             <!-- If you don't want a 'read more' section, simple delete this section between the lines of equal signs -->
@@ -112,7 +124,8 @@
             <div id="read-more">
 
                 <p class="push-down-2">I am an avid sport enthusiast in running (5k, 10k, half
-                    Marathon), playing squash, and tennis. I play in Vanderbilt Squash Club since 2021 for intramural and
+                    Marathon), playing squash, and tennis. I play in Vanderbilt Squash Club since 2021 for intramural
+                    and
                     intercollegiate competitions. Right now, I am training for triathlon and hoping to unlock my first
                     Olympic distance triathlon in 2025.
                 </p>
@@ -172,29 +185,34 @@
 
 
 
-
 </script>
 
 <!-- Local scripts -->
 <script src="js/main.js"></script>
 
 <script>
-      $(document).ready(function () {
-
+    $(document).ready(function () {
+        // Load navbar.html content into #navbar-include div
         $("#navbar-include").load("navbar.html", function () {
-          console.log("Navbar loaded.");
+            console.log("Navbar loaded.");
+
+            // Event delegation for toggle button click
+            $(document).on('click', '.navbar-toggle', function () {
+                var target = $(this).data('target');
+                $(target).collapse('toggle');
+            });
         });
-
-      });
-
-
-
+    });
 
 
 
 
 </script>
-
+<footer style="text-align:center">
+    <a href='https://clustrmaps.com/site/1c00m' title='Visit tracker'><img
+            src='//clustrmaps.com/map_v2.png?cl=0e1633&w=a&t=m&d=uoQ-CciICtLVuQg8y2qb2wNeu-Cs83UlF5MPjMJQZpM&co=0b4975&ct=cdd4d9'/></a>
+    <br>
+</footer>
 </body>
 
 </html>
