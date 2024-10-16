@@ -213,6 +213,67 @@ blockquote footer {
   padding-bottom: 2px;
 }
 
+/* news sections*/
+
+    <style>
+
+        .news-section-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Optional: spacing above and below the section */
+        }
+
+        .news-section {
+            width: 100%; /* Takes full width of the main container */
+            max-width: 1200px; /* Adjust this value to match your main content width */
+            max-height: 200px; /* Adjust the height as needed */
+            overflow-y: scroll; /* Enables the vertical scrollbar */
+            padding: 10px;
+
+        }
+
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .news-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+            display: flex;
+
+        }
+        .news-date {
+            font-weight: bold;
+            color: #1a73e8; /* Customize this color as needed */
+            margin-right: 10px; /* Adds space between the date and message */
+        }
+
+        .news-message {
+            margin-left: 5px; /* Adds a bit of space to ensure separation */
+        }
+        /* Optional: Customize the scrollbar */
+        .news-section::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .news-section::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+        }
+
+        .news-section::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+    </style>
+
+
 /* Contact info area, index.html page ------------------------------------------------- */
 #title {
   color: #20364c;
