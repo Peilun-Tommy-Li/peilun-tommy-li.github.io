@@ -1,111 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Metadata for the Webpage -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Peilun (Tommy) Li</title>
+    <!-- Metadata for the Webpage -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peilun (Tommy) Li</title>
+    <!-- Favicons -- We recommend this site for generating favicons: https://www.favicon-generator.org/ -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-  <!-- Favicons -- We recommend this site for generating favicons: https://www.favicon-generator.org/ -->
-  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+    <!-- Bootstrap CSS files-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-  <!-- Bootstrap CSS files-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- jQuery UI CSS (optional) -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-  <!-- jQuery UI CSS (optional) -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <!-- Google web fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
 
-  <!-- Google web fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Web Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-  <!-- Font Awesome Web Icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Academicons Courtesy of https://jpswalsh.github.io/academicons/ -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
-  <!-- Academicons Courtesy of https://jpswalsh.github.io/academicons/ -->
-  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-
-  <!-- Local styles -->
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Local styles -->
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
 
-  <!-- navbar include -->
-  <div id="navbar-include"></div>
+<!-- Navbar Include -->
+<div id="navbar-include"></div>
 
-  <div class="spacer-div-3 hidden-xs hidden-xs"></div>
+<div class="spacer-div-3 hidden-xs"></div>
 
-  <!-- Main content    -->
-  <div id="main-container" class="container">
+<!-- Main Content -->
+<div id="main-container" class="container">
 
     <div class="row">
-      <div class="col-sm-12">
+        <div class="col-sm-12">
 
-        <h1>Curriculum Vitae</h1>
+            <header class="text-center">
+                <img src="img/headshot.png" alt="Peilun (Tommy) Li's Profile Picture"
+                     class="img-responsive center-block" style="width:150px; border-radius:50%;">
+                <h1>Peilun (Tommy) Li</h1>
+                <p>
+                    <!-- Email Icon -->
+                    <a href="mailto:peilun.li@vanderbilt.edu" title="Email" target="_blank">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                    &nbsp;&nbsp;
 
-        <p>Find my curriculum vitae below. Last update: Dec 20, 2024.</p>
+                    <!--                    &lt;!&ndash; LinkedIn Icon &ndash;&gt;-->
+                    <!--                    <a href="https://linkedin.com/in/peilunli" title="LinkedIn" target="_blank">-->
+                    <!--                        <i class="fab fa-linkedin fa-lg"></i>-->
+                    <!--                    </a>-->
+                    <!--                    &nbsp;&nbsp;-->
 
-        <p class='text-right'><a href=PDF_files/Resume.pdf><i class='fas fa-print fa-fw' aria-hidden='true'></i>&nbsp;PDF Vitae</a></p><iframe width='100%'
-          height='900px' frameborder='0' scrolling='yes' class='embed-responsive-item' src=PDF_files/Resume.pdf allowfullscreen></iframe>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/Peilun-Tommy-Li" title="GitHub" target="_blank">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    &nbsp;&nbsp;
 
-      </div>
+                    <!-- Google Scholar Icon (Academicons) -->
+                    <!-- Replace YOUR_GOOGLE_SCHOLAR_LINK with your Google Scholar URL -->
+                    <a href="https://scholar.google.com/citations?user=FcmYSpsAAAAJ&hl=en" title="Google Scholar"
+                       target="_blank">
+                        <i class="ai ai-google-scholar ai-lg"></i>
+                    </a>
+                    &nbsp;&nbsp;
+
+                    <!-- CV Icon -->
+                    <!-- Replace PDF_files/Resume.pdf with the path to your PDF resume -->
+                    <a href="PDF_files/Resume.pdf" title="Download CV" target="_blank">
+                        <i class="fas fa-file-pdf fa-lg"></i>
+                    </a>
+                </p>
+            </header>
+
+
+            <!-- Education -->
+            <section id="education">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <div class="resume-block-logo">
+                            <img src="img/Logos/VU.png" alt="Company Logo" class="img-responsive">
+                        </div>
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>B.S. in Computer Science and Mathematics (Double Majors)</h3>
+                            <strong>Vanderbilt University | GPA: 3.924 | 2021 - 2025</strong>
+                            <ul>
+                                <li>Computer Science (Hons): Advanced Machine learning, Reinforcement Learning, Scientific Machine Learning,
+                                    Algorithms for Decision-making, Software Engineering.
+                                </li>
+                                <li>Mathematics (Hons): Advanced Linear Algebra, Modeling with Differential
+                                    Equations,
+                                    Real and Complex Analysis, Statistical Inference and Probability, Topology.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="research-experiences">
+                <h2><i class="fas fa-flask"></i> Research Experiences</h2>
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <!-- Company Logo -->
+                        <div class="resume-block-logo">
+                            <img src="img/Logos/VU.png" alt="Company Logo" class="img-responsive">
+                        </div>
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Undergraduate Researcher</h3>
+                            <span>Vanderbilt University | May 2023 - Present</span>
+                            <span>Supervised by Prof. Thomas Beckers:</span>
+
+                            <ul>
+                                <li><strong>Uncertainty-quantified Latent-Space RL:</strong> Scalable reinforcement
+                                    learning for the control of complex systems. More details coming soon.
+                                </li>
+                                <br>
+                                <li><strong>Uncertainty-aware MPC Controller:</strong> Proposed and developed
+                                    physics-informed and uncertainty-aware scenario-based Model Predictive Controll for
+                                    nonlinear PDE systems.
+                                </li>
+                                <br>
+                                <li><strong>Toolbox for Modeling Dynamics:</strong> Designed, developed, and
+                                    maintained PyGpPHs, a Python package based on Gaussian Process
+                                    port-Hamiltonian System, that shows high accuracy, efficiency, and generalizability
+                                    in modeling non-linear dynamics.
+                                </li>
+                                <br>
+                                <li><strong>Probabilistic Modeling with PDE:</strong> Expanded Bayesian
+                                    modeling approaches to distributed Port-Hamiltonian System, and collaborated in
+                                    implementing GP-dPHS models.
+                                </li>
+                                <br>
+                                <li><strong>Out-of-Distribution Dynamics Detection:</strong> Developed and collaborated
+                                    framework for detecting outlier dynamics detection algorithms based on conformal
+                                    prediction.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <!-- Company Logo -->
+                        <div class="resume-block-logo">
+                            <img src="img/Logos/VU.png" alt="Company Logo" class="img-responsive">
+                        </div>
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Undergraduate Researcher</h3>
+                            <span>Vanderbilt University | Jan 2023 - May 2023, Aug 2024 - Present</span>
+                            <span>Supervised by Prof. Glenn Webb:</span>
+
+                            <ul>
+                                <li><strong>Vaccine Hesitation Models for COVID-19:</strong> Exploring
+                                    models of vaccine hesitation and analyzing mathematical properties of such models.
+                                    More details coming soon.
+                                </li>
+                                <br>
+                                <li><strong>Age-structured Compartmental Modeling for COVID-19:</strong> Studied
+                                    mathematical
+                                    theories of disease modeling with ODEs and PDEs. Developed theory and constructed
+                                    population age-structured, compartmentalized systems of ODEs that considers social
+                                    contacts.
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2><i class="fas fa-book"></i> Publications</h2>
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers. <span style="color: gray;">”NAPI-MPC: Neural Accelerated Physics-Informed MPC control
+                                for nonlinear PDE systems”.</span>
+                                7th Conference on Learning for Dynamics and Control (L4DC), 2025. (under review)</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <p>Kaiyuan Tan, <strong>Peilun Li</strong>, Jun Wang, and Thomas Beckers. <span
+                                    style="color: gray;">”PnP-PIML: Physics-informed Learning of Outlier Dynamics using Uncertainty Quantified Port-Hamiltonian Models”.</span>
+                                IEEE International Conference on Robotics and Automation (ICRA), 2025. (under review)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers. <span style="color: gray;">”PyGpPHs: A Python Package for Bayesian Modeling of Port-Hamiltonian Systems”.</span>
+                                In: Proceedings of the 8th IFAC Workshop on Lagrangian and Hamiltonian Methods for
+                                Nonlinear Control (LHMNC). 2024.</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <p>Kaiyuan Tan, <strong>Peilun Li</strong>, and Thomas Beckers. <span style="color: gray;">”Physics-Constrained Learning for PDE Systems with Uncertainty Quantified Port-Hamiltonian Models”.</span>
+                                In: Proceedings of the 6th Conference on Learning for Dynamics and Control (L4DC). 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards -->
+            <section id="awards">
+                <h2><i class="fas fa-trophy"></i> Honors and Awards</h2>
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>CRA Outstanding Undergraduate Researcher Award - Honorable Mention (2025)</h3>
+                            <span>Computing Research Association (CRA) | 2024-2025</span>
+                            <p>Recognized among fewer than 150 undergraduate researchers in North America for
+                                exceptional academic and research contributions and potential in computer science.</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Awards from Vanderbilt University:</h3>
+                            <!--                            <span>Vanderbilt University | Mar 2024</span>-->
+                            <ul>
+                                <li>VUSE-ISIS Summer Research Fellowship ($8000) | Mar 2024
+                                </li>
+                                <br>
+                                <li>School of Engineering Research Travel Grant ($500) | Feb 2024
+                                </li>
+                                <br>
+                                <li>Tennessee Beta Chapter of Tau Beta Pi (TBP) at Vanderbilt University | Dec 2023
+                                    <br>
+                                    <span>Award extended to undergraduate engineering majors who are in the top 12.5% of Class of 2025.</span>
+                                </li>
+                                <br>
+                                <li>School of Engineering Award Undergraduate ($5000) | May 2023
+                                    <br>
+                                    <span>Scholarship award to 40 excelling undergraduate students in the School of Engineering.</span>
+                                </li>
+                                <br>
+                                <li>Dean's List | Dec 2021 - Present
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--                    <div class="resume-block">-->
+                    <!--                        <div class="resume-block-dot"></div>-->
+                    <!--                        <div class="resume-block-content">-->
+                    <!--                            <h3>American Mathematics Competition Honor Roll</h3>-->
+                    <!--                            <span>American Mathematics Competition (AMC) | Feb 2021</span>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                </div>
+            </section>
+
+            <!-- Teaching -->
+            <section id="teaching">
+                <h2><i class="fas fa-chalkboard-teacher"></i> Teaching</h2>
+
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <div class="resume-block-logo">
+                            <img src="img/Logos/VU.png" alt="Company Logo" class="img-responsive">
+                        </div>
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Teaching Assistant (TA)</h3>
+                            <span>Vanderbilt University | Aug 2022 - Present</span>
+                            <ul>
+                                <li>CS4262/5262: Foundation of Machine Learning | Fall 2024</li>
+                                <br>
+                                <li>Math3620/5620: Intro to Numerical Math | Fall 2024</li>
+                                <br>
+                                <li>CS3251/5251: Intermediate Software Design | Fall 2023, Spring 2024</li>
+                                <br>
+                                <li>CS2212: Discrete Structure | Fall 2022</li>
+                                <br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conferences Attended -->
+            <section id="conferences-attended">
+                <h2><i class="fas fa-calendar-alt"></i> Conferences Attended</h2>
+                <div class="block-timeline">
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>16th World Congress on Computational Mechanics (WCCM)</h3>
+                            <span>Vancouver, British Columbia | Jul 2024</span>
+                            <p> Delivered 20-minute oral presentations on:
+                            <ul>
+                                <li>Our paper on PyGpPHs toolbox for Bayesian Modeling of Port-Hamiltonian Systems</li>
+                                <br>
+                                <li>Our paper on Physics-Constrained Learning for PDE Systems with Uncertainty
+                                    Quantified PHS
+                                </li>
+
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Institute for Software Integrated System (ISIS) 25th Anniversary Celebration</h3>
+                            <span>Nashville, TN | Aug 2023</span>
+                            <p>Presented our recent work on “Bayesian Physics-Informed Models for Soft Robotics.”</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <div class="resume-block-dot"></div>
+                        <div class="resume-block-content">
+                            <h3>Shanks Workshop on Advances in Theoretical Biology and Mathematical Biology</h3>
+                            <span>Nashville, TN | Mar 2023</span>
+                            <p>Presented my work on Age-Structured Systems of ODE Modeling on COVID-19.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
     </div>
 
-  </div>
+</div>
 
-  <!-- Back-to-top button -->
-  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+<!-- Back-to-top button -->
+<a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link"
+   href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
-  <!-- footer include -->
-  <div w3-include-html="footer.html"></div>
+<!-- Footer Include -->
+<div w3-include-html="footer.html"></div>
 
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Bootstrap JS Library -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Bootstrap JS Library -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
 
+<!-- html file include script | used for navbar and footer -->
+<script src="js/w3data.js"></script>
 
-  <!-- html file include script | used for navbar and footer -->
-  <script src="js/w3data.js"></script>
-
-  <!-- Local scripts -->
-  <script src="js/main.js"></script>
-  <script>
+<!-- Local scripts -->
+<script src="js/main.js"></script>
+<script>
     w3IncludeHTML()
-  </script>
-  <script>
-    $(document).ready(function() {
 
-      $("#navbar-include").load("navbar.html", function() {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script>
+    $(document).ready(function () {
+
+      $("#navbar-include").load("navbar.html", function () {
         $("#home").removeClass("active");
         $("#vitae").addClass("active");
+      });
 
+      // Smooth scrolling for navigation links
+      $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top - 60 // Adjust offset for fixed navbar
+        }, 500, 'linear');
+      });
+
+      // Scroll to top when button is clicked
+      $('#topper').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 500);
+        return false;
+      });
+
+      // Add 'in-view' class to resume-block when in viewport
+      $(window).on('scroll', function () {
+        $('.resume-block').each(function () {
+          var elementTop = $(this).offset().top;
+          var viewportBottom = $(window).scrollTop() + $(window).height();
+          if (elementTop < viewportBottom - 100) {
+            $(this).addClass('in-view');
+          }
+        });
       });
 
     });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 </body>
+</html>
+
 
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--  &lt;!&ndash; Metadata for the Webpage &ndash;&gt;-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <title>Peilun (Tommy) Li</title>-->
+
+<!--  &lt;!&ndash; Favicons &#45;&#45; We recommend this site for generating favicons: https://www.favicon-generator.org/ &ndash;&gt;-->
+<!--  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">-->
+<!--  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">-->
+<!--  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">-->
+<!--  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">-->
+<!--  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">-->
+<!--  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">-->
+<!--  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">-->
+<!--  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">-->
+<!--  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">-->
+<!--  <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">-->
+<!--  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">-->
+<!--  <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">-->
+<!--  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">-->
+<!--  <meta name="msapplication-TileColor" content="#ffffff">-->
+<!--  <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">-->
+<!--  <meta name="theme-color" content="#ffffff">-->
+
+<!--  &lt;!&ndash; Bootstrap CSS files&ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
+
+<!--  &lt;!&ndash; jQuery UI CSS (optional) &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">-->
+
+<!--  &lt;!&ndash; Google web fonts &ndash;&gt;-->
+<!--  <link rel="preconnect" href="https://fonts.gstatic.com">-->
+<!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">-->
+
+<!--  &lt;!&ndash; Font Awesome Web Icons &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+
+<!--  &lt;!&ndash; Academicons Courtesy of https://jpswalsh.github.io/academicons/ &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">-->
+
+<!--  &lt;!&ndash; Local styles &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="css/main.css">-->
+
+<!--</head>-->
+
+<!--<body>-->
+
+<!--  &lt;!&ndash; navbar include &ndash;&gt;-->
+<!--  <div id="navbar-include"></div>-->
+
+<!--  <div class="spacer-div-3 hidden-xs hidden-xs"></div>-->
+
+<!--  &lt;!&ndash; Main content    &ndash;&gt;-->
+<!--  <div id="main-container" class="container">-->
+
+<!--    <div class="row">-->
+<!--      <div class="col-sm-12">-->
+
+<!--        <h1>Curriculum Vitae</h1>-->
+
+<!--        <p>Find my curriculum vitae below. Last update: Dec 20, 2024.</p>-->
+
+<!--        <p class='text-right'><a href=PDF_files/Resume.pdf><i class='fas fa-print fa-fw' aria-hidden='true'></i>&nbsp;PDF Vitae</a></p><iframe width='100%'-->
+<!--          height='900px' frameborder='0' scrolling='yes' class='embed-responsive-item' src=PDF_files/Resume.pdf allowfullscreen></iframe>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Back-to-top button &ndash;&gt;-->
+<!--  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>-->
+
+<!--  &lt;!&ndash; footer include &ndash;&gt;-->
+<!--  <div w3-include-html="footer.html"></div>-->
+
+<!--  &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+<!--  &lt;!&ndash; Bootstrap JS Library &ndash;&gt;-->
+<!--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
+
+
+<!--  &lt;!&ndash; html file include script | used for navbar and footer &ndash;&gt;-->
+<!--  <script src="js/w3data.js"></script>-->
+
+<!--  &lt;!&ndash; Local scripts &ndash;&gt;-->
+<!--  <script src="js/main.js"></script>-->
+<!--  <script>-->
+<!--    w3IncludeHTML()-->
+<!--  </script>-->
+<!--  <script>-->
+<!--    $(document).ready(function() {-->
+
+<!--      $("#navbar-include").load("navbar.html", function() {-->
+
+<!--        $("#home").removeClass("active");-->
+<!--        $("#vitae").addClass("active");-->
+
+<!--      });-->
+
+<!--    });-->
+<!--  </script>-->
+
+<!--</body>-->
+
+<!--</html>-->

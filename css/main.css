@@ -540,3 +540,93 @@ dd {
   background-color: #1585cf;
   opacity: .8;
 }
+
+/*resume blocks format*/
+.block-timeline {
+  position: relative;
+  margin-left: 120px; /* Increase margin to allow space for logo and line */
+  padding: 20px 0;
+}
+
+/* Move the vertical line further to the right */
+.block-timeline:before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #eaeaea;
+}
+
+.resume-block {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Logo container to the far left */
+.resume-block-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px; /* Adjust width as needed */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the logo image */
+.resume-block-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Adjust the dot position accordingly */
+.resume-block-dot {
+  position: absolute;
+  left: 91px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #eaeaea;
+  z-index: 1;
+}
+
+/* Adjust content margin to start to the right of the line */
+.resume-block-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-left: 140px; /* More space now that line is moved */
+  width: 100%;
+}
+
+.resume-block-content h3 {
+  margin-top: 0;
+  color: #555;
+}
+
+.resume-block-content span {
+  display: block;
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* If you have animations or in-view classes, retain or adjust them as needed */
+.resume-block {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease-in-out;
+}
+.resume-block.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
