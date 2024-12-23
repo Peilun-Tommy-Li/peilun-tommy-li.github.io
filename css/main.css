@@ -604,7 +604,7 @@ dd {
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   margin-left: 140px; /* More space now that line is moved */
-  width: 100%;
+  width: 90%;
 }
 
 .resume-block-content h3 {
@@ -629,4 +629,90 @@ dd {
   opacity: 1;
   transform: translateX(0);
 }
+
+
+/*override before definition for phone view of resume blocks*/
+/* For mobile screens up to 767px wide */
+@media (max-width: 767px) {
+  /* 1) Adjust header text sizes */
+  header h1 {
+    font-size: 1.8rem; /* or whatever looks good on mobile */
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+  /* Remove or reduce spacing above/below the header if needed */
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  /* 2) Simplify the block timeline on mobile */
+  .block-timeline {
+    margin-left: 0;        /* remove forced left margin */
+    padding: 10px 0;       /* reduce padding for smaller screens */
+  }
+
+  /* Option A: Hide the line/dot entirely on small screens */
+  .block-timeline:before {
+    display: none;         /* no vertical line */
+  }
+  .resume-block-dot {
+    display: none;         /* hide the small circle */
+  }
+
+  /* Option B (Alternative): keep the line/dot but move them left:
+     .block-timeline:before { left: 20px; }
+     .resume-block-dot { left: 11px; }
+     .resume-block-logo { left: 0; transform: none; position: static; margin-bottom: 10px; }
+  */
+
+  /* 3) Make the blocks full-width or single-column */
+  .resume-block {
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 1;              /* if you want them visible immediately */
+    transform: none;         /* remove or reduce transform */
+  }
+
+  /* 4) Logo - move it inline or above the content if desired */
+  .resume-block-logo {
+    position: static;        /* place it in normal flow instead of absolutely */
+    margin-bottom: 10px;     /* small spacing below the logo */
+    transform: none;         /* remove translateY() */
+    width: 60px;             /* scale the logo down if necessary */
+    margin-left: auto;       /* center the logo horizontally */
+    margin-right: auto;
+    display: block;          /* so it can center if not using flex */
+  }
+
+  /* 5) Resume block content now goes full width */
+  .resume-block-content {
+    margin-left: 0;          /* remove left offset */
+    box-shadow: none;        /* optional: remove box-shadow on mobile */
+    width: 100%;             /* ensure it fits the screen width */
+    padding: 10px;           /* optional smaller padding on mobile */
+  }
+
+
+ /* By default, a smaller max width for mobile devices */
+.profile-img {
+  max-width: 20px;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+}
+
+@media (min-width: 10px) {
+  /* On tablets and up, allow a slightly larger image */
+  .profile-img {
+    max-width: 10px;
+    width: 100%;
+      height: auto;
+      border-radius: 50%;
+  }
+}
+
+
+}
+
 
