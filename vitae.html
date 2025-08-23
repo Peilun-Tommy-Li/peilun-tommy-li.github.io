@@ -229,49 +229,65 @@
                 </div>
             </section>
 
+<!-- Publications -->
+<section id="publications">
+  <h2><i class="fas fa-book"></i> Publications</h2>
 
-            <!-- Publications -->
-            <section id="publications">
-                <h2><i class="fas fa-book"></i> Publications</h2>
-                <div class="block-timeline">
-                    <div class="resume-block">
-                        <div class="resume-block-dot"></div>
-                        <div class="resume-block-content">
-                            <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers. <span style="color: gray;">”NAPI-MPC: Neural Accelerated Physics-Informed MPC control
-                                for nonlinear PDE systems”.</span>
-                                7th Conference on Learning for Dynamics and Control (L4DC), 2025. (Accepted)</p>
-                        </div>
-                    </div>
+  <div class="pub-layout">
+    <!-- LEFT: tally counter -->
+<aside class="pub-stats" aria-label="Publication Tally">
+  <div class="pub-total-line">Total Publication: <span id="pub-total-count">0</span></div>
+  <ul id="pub-tally-structured" class="pub-tally-list"></ul>
+</aside>
 
-                    <div class="resume-block">
-                        <div class="resume-block-dot"></div>
-                        <div class="resume-block-content">
-                            <p>Kaiyuan Tan, <strong>Peilun Li</strong>, Jun Wang, and Thomas Beckers. <span
-                                    style="color: gray;">”PnP-PIML: Physics-informed Learning of Outlier Dynamics using Uncertainty Quantified Port-Hamiltonian Models”.</span>
-                                IEEE International Conference on Robotics and Automation (ICRA), 2025. (Accepted)
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="resume-block">
-                        <div class="resume-block-dot"></div>
-                        <div class="resume-block-content">
-                            <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers. <span style="color: gray;">”PyGpPHs: A Python Package for Bayesian Modeling of Port-Hamiltonian Systems”.</span>
-                                In: Proceedings of the 8th IFAC Workshop on Lagrangian and Hamiltonian Methods for
-                                Nonlinear Control (LHMNC). 2024.</p>
-                        </div>
-                    </div>
+    <!-- RIGHT: your existing block (logo placeholder + scroll list) -->
+    <div class="pub-list">
+      <div class="block-timeline">
+        <div class="resume-block">
 
-                    <div class="resume-block">
-                        <div class="resume-block-dot"></div>
-                        <div class="resume-block-content">
-                            <p>Kaiyuan Tan, <strong>Peilun Li</strong>, and Thomas Beckers. <span style="color: gray;">”Physics-Constrained Learning for PDE Systems with Uncertainty Quantified Port-Hamiltonian Models”.</span>
-                                In: Proceedings of the 6th Conference on Learning for Dynamics and Control (L4DC). 2024.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <div class="resume-block-dot"></div>
+
+          <div class="resume-block-content">
+            <div class="publications-scroll">
+              <!-- IMPORTANT: add data-venue to each item -->
+              <div class="pub-item" data-venue="L4DC" data-year="2025">
+                <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers.
+                  <span class="pub-title">“NAPI-MPC: Neural Accelerated Physics-Informed MPC control for nonlinear PDE systems”.</span>
+                  <span class="pub-venue">7th Conference on Learning for Dynamics and Control (L4DC), 2025.</span>
+                </p>
+              </div>
+
+              <div class="pub-item" data-venue="ICRA" data-year="2025">
+                <p>Kaiyuan Tan, <strong>Peilun Li</strong>, Jun Wang, and Thomas Beckers.
+                  <span class="pub-title">“PnP-PIML: Physics-informed Learning of Outlier Dynamics using Uncertainty Quantified Port-Hamiltonian Models”.</span>
+                  <span class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2025.</span>
+                </p>
+              </div>
+
+              <div class="pub-item" data-venue="IFAC Workshop" data-year="2024">
+                <p><strong>Peilun Li</strong>, Kaiyuan Tan, and Thomas Beckers.
+                  <span class="pub-title">“PyGpPHs: A Python Package for Bayesian Modeling of Port-Hamiltonian Systems”.</span>
+                  <span class="pub-venue">IFAC LHMNC, 2024.</span>
+                </p>
+              </div>
+
+              <div class="pub-item" data-venue="L4DC" data-year="2024">
+                <p>Kaiyuan Tan, <strong>Peilun Li</strong>, and Thomas Beckers.
+                  <span class="pub-title">“Physics-Constrained Learning for PDE Systems with Uncertainty Quantified Port-Hamiltonian Models”.</span>
+                  <span class="pub-venue">6th Conference on Learning for Dynamics and Control (L4DC), 2024.</span>
+                </p>
+              </div>
+
+              <!-- Add more items; just set data-venue="ICML"/"NeurIPS"/"RSS"/etc. -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /pub-list -->
+  </div> <!-- /pub-layout -->
+</section>
+
 
             <!-- Awards -->
             <section id="awards">
@@ -299,6 +315,9 @@
                             <h3>Awards from Vanderbilt University:</h3>
                             <!--                            <span>Vanderbilt University | Mar 2024</span>-->
                             <ul>
+                                <li>University Graduate Fellowship ($5000) | Aug 2025
+                                </li>
+                                <br>
                                 <li>VUSE-ISIS Summer Research Fellowship ($8000) | Mar 2024
                                 </li>
                                 <br>
@@ -347,6 +366,8 @@
                             <h3>Teaching Assistant (TA)</h3>
                             <span>Vanderbilt University | Aug 2022 - Present</span>
                             <ul>
+                                <li>CS3265: Database Management Systems | Fall 2025</li>
+                                <br>
                                 <li>Math3630/5630: Mathematical Modeling in Biology and Medicine | Spring 2025</li>
                                 <br>
                                 <li>CS4262/5262: Foundation of Machine Learning | Fall 2024</li>
@@ -368,6 +389,10 @@
                 <h2><i class="fas fa-calendar-alt"></i> Conferences Attended</h2>
                 <div class="block-timeline">
                     <div class="resume-block">
+                        <div class="resume-block-logo">
+                            <img class="img-responsive" src="img/Publications/WCCM2024.png" width='100%' alt=""
+                     style="padding-top:10px">
+                        </div>
                         <div class="resume-block-dot"></div>
                         <div class="resume-block-content">
                             <h3>16th World Congress on Computational Mechanics (WCCM)</h3>
@@ -385,6 +410,10 @@
                         </div>
                     </div>
                     <div class="resume-block">
+                        <div class="resume-block-logo">
+                            <img class="img-responsive" src="img/Publications/ISIS25th.jpg" width='100%' alt=""
+                     style="padding-top:10px">
+                        </div>
                         <div class="resume-block-dot"></div>
                         <div class="resume-block-content">
                             <h3>Institute for Software Integrated System (ISIS) 25th Anniversary Celebration</h3>
@@ -394,6 +423,10 @@
                     </div>
 
                     <div class="resume-block">
+                        <div class="resume-block-logo">
+                            <img class="img-responsive" src="img/Publications/VU_logo.png" width='100%' alt=""
+                     style="padding-top:10px">
+                        </div>
                         <div class="resume-block-dot"></div>
                         <div class="resume-block-content">
                             <h3>Shanks Workshop on Advances in Theoretical Biology and Mathematical Biology</h3>

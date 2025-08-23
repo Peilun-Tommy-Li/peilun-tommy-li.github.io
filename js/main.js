@@ -89,4 +89,138 @@ $(document).ready(function() {
       }
     });
   });
+
+    // -------------------------------
+  // Publications tally counter
+  // -------------------------------
+
+  // Optional icons for certain venues
+  const VENUE_ICONS = {
+    "L4DC": "fa-wave-square",
+    "ICRA": "fa-robot",
+    "IFAC LHMNC": "fa-infinity",
+    "ICML": "fa-brain",
+    "NeurIPS": "fa-network-wired",
+    "RSS": "fa-microchip",
+    "CoRL": "fa-cubes"
+  };
+
+  // Sort order (others go alphabetically at the end)
+  const VENUE_ORDER = ["L4DC", "ICRA", "IFAC Workshop", "RSS", "CoRL", "ICML", "NeurIPS"];
+
+  function buildPubTally() {
+    const $items = $('#publications .pub-item');
+    const tally = {};
+    let total = 0;
+
+    $items.each(function() {
+      const v = ($(this).data('venue') || '').trim();
+      if (!v) return;
+      tally[v] = (tally[v] || 0) + 1;
+      total++;
+    });
+
+    // Sort venues by VENUE_ORDER, then alphabetically
+    const venues = Object.keys(tally).sort((a, b) => {
+      const ia = VENUE_ORDER.indexOf(a);
+      const ib = VENUE_ORDER.indexOf(b);
+      if (ia !== -1 && ib !== -1) return ia - ib;
+      if (ia !== -1) return -1;
+      if (ib !== -1) return 1;
+      return a.localeCompare(b);
+    });
+
+    const $list = $('#pub-tally');
+    $list.empty();
+
+    venues.forEach(v => {
+      const $li = $('<li>');
+      const $left = $('<span class="venue-name">');
+      const $icon = $('<i>').addClass(`fas ${VENUE_ICONS[v] || 'fa-book'}`);
+      const $text = $('<span>').text(v);
+      $left.append($icon).append($text);
+
+      const $count = $('<span class="venue-count">').text(tally[v]);
+
+      $li.append($left).append($count);
+      $list.append($li);
+    });
+
+    $('#pub-total-count').text(total);
+  }
+
+  // Run tally builder now
+  buildPubTally();
+
+  // -----------------------------------------
+  // Publications tally (structured by venue)
+  // -----------------------------------------
+// Helper: turn label into a safe class (e.g., "IFAC Workshop" -> "IFAC-Workshop")
+function venueToClass(label){
+  return 'venue-' + label.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$|--+/g,'-');
+}
+// ===== Structured Publications Tally (with venue coloring) =====
+(function buildStructuredPubTally(){
+  // Display order & normalization
+  const VENUE_ORDER = ["NeurIPS","ICLR","ICML","RSS","CoRL","ICRA","L4DC","IFAC Workshop"];
+  const VENUE_ALIAS = {
+    "NEURIPS":"NeurIPS","NIPS":"NeurIPS",
+    "ICLR":"ICLR",
+    "ICML":"ICML",
+    "RSS":"RSS",
+    "CORL":"CoRL",
+    "ICRA":"ICRA",
+    "L4DC":"L4DC",
+    "IFAC":"IFAC Workshop","IFAC WORKSHOP":"IFAC Workshop",
+    "IFAC LHMNC":"IFAC Workshop","LHMNC":"IFAC Workshop",
+    "IFAC LHMNC WORKSHOP":"IFAC Workshop"
+  };
+
+  // Turn a label into a safe class, e.g. "IFAC Workshop" -> "venue-IFAC-Workshop"
+  function venueToClass(label){
+    return 'venue-' + label.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$|--+/g,'-');
+  }
+
+  const $items = $('#publications .pub-item');
+  if ($items.length === 0) return;
+
+  // Count venues and tag each item for CSS
+  const counts = {};
+  let total = 0;
+
+  $items.each(function(){
+    const raw = ($(this).data('venue') || '').toString().trim();
+    if (!raw) return;
+
+    const norm = VENUE_ALIAS[raw.toUpperCase()] || raw;
+    counts[norm] = (counts[norm] || 0) + 1;
+    total++;
+
+    // add venue class to the item so CSS colors kick in
+    $(this).addClass(venueToClass(norm));
+  });
+
+  // Total line
+  $('#pub-total-count').text(total);
+
+  // Build the list in requested order, hiding zeros
+  const $list = $('#pub-tally-structured');
+  if ($list.length){
+    $list.empty();
+    VENUE_ORDER.forEach(label=>{
+      const n = counts[label] || 0;
+      if (n === 0) return; // hide zero-count categories
+      const liClass = venueToClass(label);
+      $list.append(
+        $(`<li class="${liClass}">
+            <span class="venue-name">${label}:</span>
+            <span class="venue-count">${n}</span>
+          </li>`)
+      );
+    });
+  }
+})();
+
+
+
 });

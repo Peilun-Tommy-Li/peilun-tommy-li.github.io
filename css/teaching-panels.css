@@ -50,6 +50,13 @@ border-top: 0px;
     overflow: hidden;
 }
 
+.publications-container {
+  max-height: 300px;   /* adjust this height so about 5 publications fit */
+  overflow-y: auto;    /* enable vertical scrollbar if needed */
+  padding-right: 10px; /* so text doesn't touch the scrollbar */
+}
+
+
 
 
 

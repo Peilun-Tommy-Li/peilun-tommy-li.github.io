@@ -5,6 +5,14 @@
   --maroon: maroon;
   --nd-blue: #20364c;
   --white: white;
+  --c-neurips:#6a5acd;   /* slate purple  */
+  --c-iclr:#0E9E8D;      /* teal          */
+  --c-icml:#E07900;      /* orange        */
+  --c-rss:#0D6EFD;       /* blue          */
+  --c-corl:#7B3FE4;      /* violet        */
+  --c-icra:#C62828;      /* deep red      */
+  --c-l4dc:#0E7C59;      /* green         */
+  --c-ifac:#736357;      /* warm gray     */
 }
 
 html {
@@ -630,6 +638,310 @@ dd {
   transform: translateX(0);
 }
 
+/* keep the logo column the same width/feel as awards */
+#publications .resume-block-logo {
+  width: 110px;           /* match awards logo width */
+  min-width: 110px;
+  height: 110px;          /* keep square for balance */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* subtle placeholder since no image yet */
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(0,0,0,0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  opacity: 0.6;
+}
+
+/* scrollable container showing ~5 publications */
+.publications-scroll {
+  max-height: 21rem;   /* ~5 items; adjust as you like */
+  overflow-y: auto;
+  padding-right: 8px;  /* breathing room from scrollbar */
+}
+
+/* clean item spacing */
+.pub-item + .pub-item {
+  margin-top: 0.75rem;
+}
+
+.pub-title {
+  color: gray;
+  display: block;      /* wraps nicely beneath authors */
+}
+
+.pub-venue {
+  display: block;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+/* optional: slimmer, theme-friendly scrollbar (WebKit & Firefox) */
+.publications-scroll {
+  scrollbar-width: thin;             /* Firefox */
+  scrollbar-color: #bbb transparent;
+}
+.publications-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.publications-scroll::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #bbb;
+}
+.publications-scroll::-webkit-scrollbar-track {
+  background: transparent;}
+
+  /* Two-column wrapper */
+.pub-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr; /* left tally, right list */
+  gap: 24px;
+  align-items: start;
+}
+
+/* Tally sidebar */
+.pub-stats {
+  position: sticky;
+  top: 80px;            /* adjust to your header height */
+  background: #fafafa;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 16px 14px;
+}
+
+.pub-stats-title {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pub-tally-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-tally-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.pub-tally-list li:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.pub-tally-list .venue-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.pub-tally-list .venue-count {
+  min-width: 28px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  background: rgba(0,0,0,0.07);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.pub-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0,0,0,0.12);
+  font-weight: 700;
+}
+
+.pub-total .value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Right column: reuse your existing classes */
+.pub-list .resume-block-logo {
+  width: 110px;
+  min-width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(0,0,0,0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  opacity: 0.6;
+}
+.publications-scroll {
+  max-height: 18rem;     /* ~5 items */
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb transparent;
+}
+.publications-scroll::-webkit-scrollbar { width: 8px; }
+.publications-scroll::-webkit-scrollbar-thumb { border-radius: 8px; background: #bbb; }
+.publications-scroll::-webkit-scrollbar-track { background: transparent; }
+
+/* --- Venue color palette (tweak to taste) --- */
+:root{
+  --c-neurips:#6a5acd;        /* slate purple  */
+  --c-iclr:#0E9E8D;           /* teal          */
+  --c-icml:#E07900;           /* orange        */
+  --c-rss:#0D6EFD;            /* blue          */
+  --c-corl:#7B3FE4;           /* violet        */
+  --c-icra:#C62828;           /* deep red      */
+  --c-l4dc:#0E7C59;           /* green         */
+  --c-ifac:#736357;           /* warm gray     */
+}
+/* 2-column layout; center the columns vertically */
+.pub-layout{
+  display:grid;
+  grid-template-columns:180px 1fr;  /* left tally, right list */
+  gap:18px;
+  align-items:center;               /* <— centers the sidebar vs the card */
+}
+
+/* Sidebar (not sticky to preserve centering) */
+.pub-stats{
+  position:static;                  /* override any sticky setting */
+  background:#fafafa;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:14px;
+  padding:16px 14px;
+}
+
+.pub-total-line{ font-weight:700; margin-bottom:8px; }
+.pub-tally-list{ list-style:none; margin:0; padding:0; }
+
+.pub-tally-list li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 8px;
+  border-radius:10px;
+}
+
+/* Small colored dot before each venue label */
+.pub-tally-list .venue-name::before{
+  content:"";
+  display:inline-block;
+  width:10px; height:10px;
+  border-radius:50%;
+  margin-right:8px;
+}
+
+/* Publication list container (right card) */
+.publications-scroll{
+  max-height:21rem;    /* ~5 items */
+  overflow-y:auto;
+  padding-right:8px;
+  scrollbar-width:thin;             /* Firefox */
+  scrollbar-color:#bbb transparent;
+}
+.publications-scroll::-webkit-scrollbar{ width:8px; }
+.publications-scroll::-webkit-scrollbar-thumb{ border-radius:8px; background:#bbb; }
+.publications-scroll::-webkit-scrollbar-track{ background:transparent; }
+
+/* Individual publication items: colored left border */
+.pub-item{
+  border-left:4px solid transparent;
+  padding-left:12px;
+  border-radius:6px;
+}
+.pub-title{ color:gray; display:block; }
+.pub-venue{ display:block; font-size:.95em; opacity:.9; }
+
+/* ===== Map venue classes to colors (tally & items) ===== */
+
+/* NeurIPS */
+.venue-NeurIPS .venue-name::before,
+.venue-NeurIPS .venue-count{ color:var(--c-neurips); }
+.pub-item.venue-NeurIPS{ border-left-color:var(--c-neurips); }
+.pub-item.venue-NeurIPS .pub-venue{ color:var(--c-neurips); }
+
+/* ICLR */
+.venue-ICLR .venue-name::before,
+.venue-ICLR .venue-count{ color:var(--c-iclr); }
+.pub-item.venue-ICLR{ border-left-color:var(--c-iclr); }
+.pub-item.venue-ICLR .pub-venue{ color:var(--c-iclr); }
+
+/* ICML */
+.venue-ICML .venue-name::before,
+.venue-ICML .venue-count{ color:var(--c-icml); }
+.pub-item.venue-ICML{ border-left-color:var(--c-icml); }
+.pub-item.venue-ICML .pub-venue{ color:var(--c-icml); }
+
+/* RSS */
+.venue-RSS .venue-name::before,
+.venue-RSS .venue-count{ color:var(--c-rss); }
+.pub-item.venue-RSS{ border-left-color:var(--c-rss); }
+.pub-item.venue-RSS .pub-venue{ color:var(--c-rss); }
+
+/* CoRL */
+.venue-CoRL .venue-name::before,
+.venue-CoRL .venue-count{ color:var(--c-corl); }
+.pub-item.venue-CoRL{ border-left-color:var(--c-corl); }
+.pub-item.venue-CoRL .pub-venue{ color:var(--c-corl); }
+
+/* ICRA */
+.venue-ICRA .venue-name::before,
+.venue-ICRA .venue-count{ color:var(--c-icra); }
+.pub-item.venue-ICRA{ border-left-color:var(--c-icra); }
+.pub-item.venue-ICRA .pub-venue{ color:var(--c-icra); }
+
+/* L4DC */
+.venue-L4DC .venue-name::before,
+.venue-L4DC .venue-count{ color:var(--c-l4dc); }
+.pub-item.venue-L4DC{ border-left-color:var(--c-l4dc); }
+.pub-item.venue-L4DC .pub-venue{ color:var(--c-l4dc); }
+
+/* IFAC Workshop */
+.venue-IFAC-Workshop .venue-name::before,
+.venue-IFAC-Workshop .venue-count{ color:var(--c-ifac); }
+.pub-item.venue-IFAC-Workshop{ border-left-color:var(--c-ifac); }
+.pub-item.venue-IFAC-Workshop .pub-venue{ color:var(--c-ifac); }
+
+/* Responsive: stack columns on narrow screens */
+@media (max-width:900px){
+  .pub-layout{ grid-template-columns:1fr; align-items:start; }
+}
+
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px) {
+  .pub-layout {
+    grid-template-columns: 1fr;
+  }
+  .pub-stats {
+    position: static;
+  }
+}
+
+}
+
 
 /*override before definition for phone view of resume blocks*/
 /* For mobile screens up to 767px wide */
@@ -659,12 +971,6 @@ dd {
   .resume-block-dot {
     display: none;         /* hide the small circle */
   }
-
-  /* Option B (Alternative): keep the line/dot but move them left:
-     .block-timeline:before { left: 20px; }
-     .resume-block-dot { left: 11px; }
-     .resume-block-logo { left: 0; transform: none; position: static; margin-bottom: 10px; }
-  */
 
   /* 3) Make the blocks full-width or single-column */
   .resume-block {
@@ -711,8 +1017,6 @@ dd {
       border-radius: 50%;
   }
 }
-
-
 }
 
 
